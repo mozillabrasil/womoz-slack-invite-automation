@@ -3,23 +3,27 @@ html
   include ./includes/head.jade
   body
     .content
-      h1.title Entre na comunidade <span>#{community}</span> no Slack!
+      h1.title <span>#{community}</span> no Slack!
 
-      p O #[a(href='https://slack.com/') Slack] é um aplicativo para troca de mensagens, hoje usado pela #[a(href='https://make.wordpress.org/chat/') comunidade WordPress] para conversas e contribuições em tempo real entre seus usuários.
+      p O #[a(href='https://slack.com/') Slack] é um aplicativo para troca de mensagens, usado pelo #[a(href='http://womoz.mozillabrasil.org.br/') projeto #{community}] para conversas e contribuições em tempo real entre seus usuários.
 
       p Entre tantas outras, o Slack possui as seguintes características:
 
       ul
-        li É gratuito
-        li Tem uma interface extremamente amigável
-        li Possui, além do aplicativo web, versões para iOS, Android, Mac e Windows
-        li Integra com mais de 80 serviços, possibilitando que você receba notificações das suas ferramentas favoritas dentro de um único espaço
+        li É gratuito.
+        li Tem uma interface extremamente amigável.
+        li Possui, além do aplicativo web, versões para iOS, Android, Mac e Windows.
+        li Integra com mais de 80 serviços, possibilitando que você receba notificações das suas ferramentas favoritas dentro de um único espaço.   
+
+      .text
+        p WoMoz (Women & Mozilla) é uma comunidade composta por entusiastas da web aberta com foco em aumentar o envolvimento de mulheres na tecnologia. 
+        p Nosso objetivo principal é dar maior visibilidade e incentivar o trabalho das mulheres dentro do mundo Open Source. 
+        p O WoMoz existe desde 2009 e tem passado por reformulações de objetivos. 
+        p No Brasil o movimento foi iniciado em outubro de 2014 por um grupo de voluntárias da #[a(href='http://mozillabrasil.org.br/') comunidade Mozilla Brasil].
       
-      img(src="img/wpbrasil-slack.png").img-logo
-
-      p.text-default A comunidade brasileira de WordPress está no Slack também. Digite abaixo o seu email e entre na conversa!
-
-      p.text O espaço criado no Slack para a comunidade brasileira de WordPress é aberto para discussões e conversas relacionadas ao WordPress e a comunidade Brasileira e suas cidades, WordCamps, meetups, desenvolvimento de plugins e demais iniciativas. Sendo assim, é importante lembrar que <strong>não oferecemos suporte nesse canal</strong>. Para isso, procure os #[a(href='http://br.forums.wordpress.org/') fóruns oficiais em português].
+      p O futuro da web está em nossas mãos – venha lutar com a gente :) 
+      
+      p Digite abaixo o seu email e entre na conversa!
 
       if success === 1
         div.message.success
@@ -29,7 +33,7 @@ html
           div.message.error
             p #{message}
         form(method="POST", action="/invite")#join-form
-          input(type="text", name="email", placeholder="Informe seu email")#slack-email
+          input(type="text", name="email", placeholder="Digite o seu e-mail")#slack-email
           input(type="submit", name="submit", value="Entrar")#slack-submit
     script.
       var form = document.getElementById('join-form');
